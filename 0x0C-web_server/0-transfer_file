@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Check if all parameters are provided
+if [ "$#" -ne 4 ]; then
+  echo "Usage: 0-transfer_file $1 $2 $3 $4"
+  exit 1
+fi
+
+# Parameters
+file_path="$1"
+server_ip="$2"
+username="$3"
+private_key_path="$4"
+server_directory="~/"
+
+# Transfer the file using scp with specified parameters
+scp -i "$private_key_path" "$file_path" "$username@$server_ip:$server_directory"
