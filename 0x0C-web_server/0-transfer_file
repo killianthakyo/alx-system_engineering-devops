@@ -14,4 +14,4 @@ private_key_path="$4"
 server_directory="~/"
 
 # Transfer the file using scp with specified parameters
-scp -i "$private_key_path" "$file_path" "$username@$server_ip:$server_directory"
+scp -o StrictHostKeyChecking=no -i "$private_key_path" "$file_path" "$username@$server_ip:$server_directory"
