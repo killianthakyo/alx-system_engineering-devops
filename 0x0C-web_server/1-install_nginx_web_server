@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-# Script to set up an nginx server and create an index.html file
-
-sudo apt-get update
+# Sets up an nginx web server
 sudo apt-get install -y nginx
-echo 'Hello World!' > /var/www/html/index.html
-sudo service nginx start
+echo "Hello World!" > /usr/share/nginx/html/index.html
+sudo service nginx restart
