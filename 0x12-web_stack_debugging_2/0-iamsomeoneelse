@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # whoami
-sudo userad -m -s /bin/bash "syslog"
+sudo useradd -m -s /bin/bash "syslog"
 su "$1" -s /bin/bash -c "whoami"
