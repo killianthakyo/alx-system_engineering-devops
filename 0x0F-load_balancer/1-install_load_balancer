@@ -8,5 +8,5 @@ sudo apt-get install haproxy -y
 sudo apt-get install policycoreutils -y
 setsebool -P haproxy_connect_any=1
 sed -i '22 i\\nfrontend http-frontend\n\tbind \*:80\n\tmode http\n\tdefault_backend www-backend' /etc/haproxy/haproxy.cfg
-sed -i '27 i\\nbackend www-backend\n\tbalance roundrobin\n\tmode http\n\tserver 1-www 34.204.61.83:80 check\n\tserver 2-www 54.144.153.62:80 check' /etc/haproxy/haproxy.cfg
+sed -i '27 i\\nbackend www-backend\n\tbalance roundrobin\n\tmode http\n\tserver 1-www 34.207.189.69:80 check\n\tserver 2-www 100.26.232.18:80 check' /etc/haproxy/haproxy.cfg
 sudo service haproxy restart 2>&1
