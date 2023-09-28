@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Returns to-do list information for a given employee ID."""
-import requests
 import csv
+import requests
 import sys
 
 if __name__ == "__main__":
@@ -13,10 +13,7 @@ if __name__ == "__main__":
     username = user.get("username")
 
     with open(csv_file_name, mode='w', newline='') as csv_file:
-        csv_writer = csv.writer(csv_file, quoting = csv.QUOTE_ALL)
+        csv_writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
         for t in todos:
-            csv_writer.writerow([user_id, username, t.get("completed"), t.get("title")])
-    #completed = [t.get("title") for t in todos if t.get("completed") is True]
-    #print("Employee {} is done with tasks({}/{}):".format(
-    #   user.get("name"), len(completed), len(todos)))
-    #[print("\t {}".format(c)) for c in completed]
+            csv_writer.writerow(
+                    [user_id, username, t.get("completed"), t.get("title")])
